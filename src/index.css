@@ -1,0 +1,14 @@
+
+* {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+#App {
+    font-size: 2em;
+    text-align: center;
+    background-color: #ffffff;
+    color: #1B5299;
+    width: 100vw;
+    height: 200vh;
+}
