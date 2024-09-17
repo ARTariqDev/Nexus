@@ -1,4 +1,5 @@
 .Card {
+  width: auto;
   transition: rgba(0, 0, 0, 0.35) 0px 5px 15px, background-color 0.3s ease;
   -webkit-transition: rgba(0, 0, 0, 0.35) 0px 5px 15px, background-color 0.3s ease;
   -moz-transition: rgba(0, 0, 0, 0.35) 0px 5px 15px, background-color 0.3s ease;
@@ -12,7 +13,7 @@
 }
 
 .Card h1, .Card h2 {
-  color: #1B5299;
+  color: #000000;
 }
 
 .Card img {
@@ -52,7 +53,7 @@ iframe {
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   width: 80%;
-  height: 80vh; /* Adjust height as needed */
+  height: 150vh; /* Adjust height as needed */
   margin-top: 20px;
   margin-bottom: 20px;
 }
