@@ -1,9 +1,20 @@
-# React + Vite
+# Instructions
+- Clone the repository or download all files as a zip
+- navigate to the root directory and run "npm install" in the terminal
+- run "npm run dev" to view the app
+  
+# Nexus-Learn
+- Nexus-Learn is an app that compiles and organizes resources topic-wise for A-level subjects
+- Currently, the following subjects are being implemented:
+  - Maths
+  - Further Maths
+  - Computer Science
+  - Physics
+  - Chemistry
+  - SAT related resources
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Nexus
+- The final app will have:
+  - past papers (topical)
+  - books
+  - notes
+ 
