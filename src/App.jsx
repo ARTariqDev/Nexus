@@ -77,7 +77,7 @@ function App() {
               src={links[subject]}
               title={subject}
               allow="autoplay"
-              style={{ width: '90%', height: '120vh', marginTop: '20px' ,borderRadius: '1em',border: 'solid black 0.01em',boxShadow: '0px 8px 16px rgba(1, 1, 1, 0.3)'}}
+              style={{ width: '90%', height: '100vh', marginTop: '20px' ,borderRadius: '1em',border: 'solid black 0.01em',boxShadow: '0px 8px 16px rgba(1, 1, 1, 0.3)'}}
             />
           </main>
         )}
