@@ -24,7 +24,7 @@ function App() {
     "Physics": "https://drive.google.com/file/d/your-physics-link",
     "Chemistry": "https://drive.google.com/file/d/your-chemistry-link",
     "Biology": "https://drive.google.com/file/d/your-biology-link",
-    "Computer Science": "https://drive.google.com/file/d/your-compsci-link"
+    "Computer Science": "https://e.pcloud.link/publink/show?code=kZvpjCZxYw1P5n1iEp5UiNrtni77jU1aeiy"
   };
 
   // Function to handle subject card click
