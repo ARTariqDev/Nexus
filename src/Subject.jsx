@@ -15,7 +15,7 @@ function Subject({ name, path, onClick }) {
         height="100%"
         className="Card"  // Apply the .Card class here
       >
-        <Image src={path} alt={name} />
+        <Image src={path} alt={name} maxHeight="80%"/>
 
         <CardBody >
           <Heading size="lg" textAlign="center" marginTop="-0.3em">{name}</Heading>
