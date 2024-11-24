@@ -27,7 +27,7 @@ function App() {
     "Computer Science 9618": "https://e.pcloud.link/publink/show?code=kZvpjCZxYw1P5n1iEp5UiNrtni77jU1aeiy",
 
     // O Level
-    "Maths 4024": "http://e.pc.cd/RBBy6alK",
+    "Maths 4024": "https://e.pcloud.link/publink/show?code=kZ6vKxZDhnyiFQoClL6CV4JusJM80wQkT4k",
     "Islamiyat 2058": "https://drive.google.com/file/d/your-islamiyat-link",
     "Chemistry 5070": "https://drive.google.com/file/d/your-chemistry-link",
   };
