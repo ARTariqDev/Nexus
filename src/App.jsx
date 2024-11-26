@@ -118,8 +118,8 @@ function App() {
               title={subject}
               allow="autoplay"
               style={{
-                width: '85%',
-                height: '80vh',
+                width: '95%',
+                height: '150vh',
                 marginTop: '20px',
                 borderRadius: '1em',
                 border: 'solid black 0.01em',
