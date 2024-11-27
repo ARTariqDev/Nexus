@@ -23,7 +23,7 @@ function App() {
     "Further Maths 9231": "https://e.pcloud.link/publink/show?code=kZEByCZEihIUCpG8lYIRql60u7PAh9jY937",
     "Physics 9702": "https://drive.google.com/file/d/your-physics-link",
     "Chemistry 9701": "https://drive.google.com/file/d/your-chemistry-link",
-    "SAT": "https://drive.google.com/file/d/your-sat-link",
+    "SAT": "https://e.pcloud.link/publink/show?code=kZ499xZQbnubSRgjDX5vEnckBwFW7FDxByX",
     "Computer Science 9618": "https://e.pcloud.link/publink/show?code=kZvpjCZxYw1P5n1iEp5UiNrtni77jU1aeiy",
 
     // O Level
