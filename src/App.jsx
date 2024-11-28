@@ -28,7 +28,7 @@ function App() {
 
     // O Level
     "Maths 4024": "https://e.pcloud.link/publink/show?code=kZ6vKxZDhnyiFQoClL6CV4JusJM80wQkT4k",
-    "Islamiyat 2058": "https://drive.google.com/file/d/your-islamiyat-link",
+    "Islamiyat 2058": "https://e.pcloud.link/publink/show?code=kZzqUxZLPrdz1Q7eL4U9qbyhBA0t84O8OPV",
     "Chemistry 5070": "https://drive.google.com/file/d/your-chemistry-link",
   };
 
