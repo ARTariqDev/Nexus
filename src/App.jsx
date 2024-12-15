@@ -1,4 +1,4 @@
-import { ChakraProvider, SimpleGrid, Button, ButtonGroup, Box, Stack, Input, Heading, Text } from '@chakra-ui/react';
+import { ChakraProvider, SimpleGrid, Button, ButtonGroup } from '@chakra-ui/react';
 import Subject from './Subject.jsx';
 import './App.css';
 import { useState, useRef } from 'react';
@@ -14,10 +14,7 @@ function App() {
   const [subject, setSubject] = useState(""); // State to track the selected subject
   const [isGridVisible, setIsGridVisible] = useState(true); // Controls grid visibility
   const [level, setLevel] = useState("A level"); // Default level
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Tracks login state
-  const [authMode, setAuthMode] = useState("login"); // Tracks if the user is on login or signup mode
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
   const iframeRef = useRef(null);
 
   const links = {
@@ -35,13 +32,6 @@ function App() {
     "Chemistry 5070": "https://drive.google.com/file/d/your-chemistry-link",
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false); // Reset login state
-    setIsGridVisible(true); // Show the login/signup form
-    setEmail(""); // Clear email
-    setPassword(""); // Clear password
-  };
-
   const handleSubjectClick = (subjectName) => {
     setSubject(subjectName); // Set the selected subject
     setIsGridVisible(false); // Hide the subject grid
@@ -54,66 +44,6 @@ function App() {
     setIsGridVisible(true); // Show the subject grid
     setSubject(""); // Clear the selected subject
   };
-
-  const handleAuthSubmit = async () => {
-    const endpoint = authMode === "login" ? "/login" : "/signup";
-    const response = await fetch(`http://localhost:5001${endpoint}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-    if (data.token) {
-      setIsLoggedIn(true);
-      setIsGridVisible(true);
-    } else {
-      alert(data.message || "Something went wrong");
-    }
-  };
-
-  const renderAuthForm = () => (
-    <Box textAlign="center" p={6} backgroundColor="#111111" color="white">
-      <Heading size="lg" mb={4}>
-        {authMode === "login" ? "Login" : "Sign Up"}
-      </Heading>
-      <Stack spacing={3} mx="auto" width={["90%", "50%", "30%"]}>
-        <Input
-          placeholder="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          bg="gray.800"
-          color="white"
-        />
-        <Input
-          placeholder="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          bg="gray.800"
-          color="white"
-        />
-        <Button colorScheme="yellow" onClick={handleAuthSubmit}>
-          {authMode === "login" ? "Login" : "Sign Up"}
-        </Button>
-        <Text fontSize="sm" mt={2}>
-          {authMode === "login"
-            ? "Don't have an account?"
-            : "Already have an account?"}{" "}
-          <Button
-            variant="link"
-            color="yellow.400"
-            onClick={() =>
-              setAuthMode(authMode === "login" ? "signup" : "login")
-            }
-          >
-            {authMode === "login" ? "Sign Up" : "Login"}
-          </Button>
-        </Text>
-      </Stack>
-    </Box>
-  );
 
   const renderSubjects = () => {
     const subjects = level === "A level" ? [
@@ -174,25 +104,9 @@ function App() {
           <h6 style={{ color: 'gray', fontSize: 'medium', backgroundColor: "#111111", margin: 0 }}>
             O/A level Resources at Your Fingertips
           </h6>
-          {isLoggedIn && (
-            <Button
-              onClick={handleLogout}
-              colorScheme="yellow"
-              size="sm"
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-              }}
-            >
-              Logout
-            </Button>
-          )}
         </header>
 
-        {!isLoggedIn ? (
-          renderAuthForm()
-        ) : isGridVisible ? (
+        {isGridVisible ? (
           renderSubjects()
         ) : (
           <main>
