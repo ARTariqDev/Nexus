@@ -1,3 +1,8 @@
+body {
+  background-color: #000000;
+}
+
+
 .Card {
   width: auto;
   transition: rgba(0, 0, 0, 0.35) 0px 5px 15px, background-color 0.3s ease;
@@ -8,8 +13,8 @@
 }
 
 .Card:hover {
-  background-color: #f0f0f0; /* Highlight card on hover */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow visibility */
+  background-color: #222222; /* Highlight card on hover */
+  box-shadow: 0px 8px 16px rgba(94, 94, 94, 0.3); /* Increased shadow visibility */
 }
 
 .Card h1, .Card h2 {
@@ -22,7 +27,7 @@
 }
 
 button {
-  color: #000000;
+  color: #ffaa00;
   border: solid black 0.1em;
   font-size: medium;
   padding-top: -2em;
@@ -36,8 +41,8 @@ button {
   -o-border-radius: 0.3em;
 }
 
-button:hover {
-  background-color: #111111;
+.SubButton:hover {
+  background-color: #ffcc00;
   color: #ffffff;
 }
 

@@ -61,45 +61,50 @@ function App() {
 
     return (
       <>
-        <ButtonGroup isAttached variant="outline" size="sm" mb={5}>
+        <ButtonGroup isAttached variant="outline" size="sm" mb={5} backgroundColor={"#111111"}>
           <Button
             onClick={() => setLevel("A level")}
-            colorScheme={level === "A level" ? "black" : "black"}
+            colorScheme={level === "A level" ? "black" : "gray"}
+            backgroundColor={"#111111"}
+            borderRadius={"8em"}
+            color={level === "A level" ? "#ffaa00" : "#ffaa00"}
           >
             A Level
           </Button>
           <Button
             onClick={() => setLevel("O level")}
-            colorScheme={level === "O level" ? "black" : "black"}
+            colorScheme={level === "O level" ? "black" : "gray"}
+            borderColor="#ffaa00"
+            backgroundColor={"#111111"}
+            borderRadius={"8em"}
+            color={level === "O level" ? "#ffaa00" : "#ffaa00"}
           >
             O Level
           </Button>
-      </ButtonGroup>
-      <SimpleGrid columns={[1, 2, 3]} spacing={5}>
-        {subjects.map((sub) => (
-          <Subject
-            key={sub.name}
-            name={sub.name}
-            path={sub.path}
-            onClick={() => handleSubjectClick(sub.name)}
-          />
-        ))}
-      </SimpleGrid>
+        </ButtonGroup>
+        <SimpleGrid columns={[1, 2, 3]} spacing={5} style={{backgroundColor : "#000000"}}>
+          {subjects.map((sub) => (
+            <Subject
+              key={sub.name}
+              name={sub.name}
+              path={sub.path}
+              onClick={() => handleSubjectClick(sub.name)}
+            />
+          ))}
+        </SimpleGrid>
       </>
-
     );
   };
 
   return (
     <ChakraProvider>
-      <div id="App">
-        <header style={{ color: 'white', backgroundColor: 'black', textAlign: 'center', padding: '1em 0' }}>
-          <h1 style={{ backgroundColor: "black" }}>Nexus Learn</h1>
-          <h6 style={{ color: 'gray', fontSize: 'medium', backgroundColor: "black" }}>
-            O/A Resources at Your Fingertips
+      <div id="App" style={{backgroundColor : "#000000"}}>
+        <header style={{ color: 'white', backgroundColor: '#111111', textAlign: 'center', padding: '1em 0' }}>
+          <h1 style={{ backgroundColor: "#111111", margin: 0 ,fontSize : '2em'}}>Nexus Learn</h1>
+          <h6 style={{ color: 'gray', fontSize: 'medium', backgroundColor: "#111111", margin: 0 }}>
+            O/A level Resources at Your Fingertips
           </h6>
         </header>
-
 
         {isGridVisible ? (
           renderSubjects()
@@ -107,8 +112,17 @@ function App() {
           <main>
             <button
               onClick={handleReturnClick}
-              color="black"
-              style={{borderRadius:"0.5em"}}
+              style={{
+                color: "#ffaa00",
+                backgroundColor: "#111111",
+                border: 'solid black 0.1em',
+                fontSize: 'medium',
+                padding: '0.5em 1em',
+                margin: '1em auto',
+                display: 'block',
+                borderRadius: '0.5em',
+                width: 'fit-content'
+              }}
             >
               ↩ Back to Subjects
             </button>
@@ -123,7 +137,11 @@ function App() {
                 marginTop: '20px',
                 borderRadius: '1em',
                 border: 'solid black 0.01em',
-                boxShadow: '0px 8px 16px rgba(1, 1, 1, 0.3)'
+                boxShadow: '0px 8px 16px rgba(1, 1, 1, 0.3)',
+                display: 'block',
+                margin: 'auto',
+                backgroundColor : 'gray',
+                color : "white"
               }}
             />
           </main>
