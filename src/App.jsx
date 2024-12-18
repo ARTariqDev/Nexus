@@ -140,6 +140,7 @@ function App() {
                 boxShadow: '0px 8px 16px rgba(1, 1, 1, 0.3)',
                 display: 'block',
                 margin: 'auto',
+                backgroundColor: 'white',
                 color : "white"
               }}
             />
