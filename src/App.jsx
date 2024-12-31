@@ -8,6 +8,7 @@ import PhysicsImage from './assets/physics.jpeg';
 import ChemistryImage from './assets/chemistry.jpeg';
 import SATimage from './assets/SAT.png';
 import CSimage from './assets/CS.jpeg';
+import ITimage from './assets/IT.jpg';
 import IslamiyatImage from './assets/islamiyat.png';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     "Chemistry 9701": "https://drive.google.com/file/d/your-chemistry-link",
     "SAT": "https://e.pcloud.link/publink/show?code=kZ499xZQbnubSRgjDX5vEnckBwFW7FDxByX",
     "Computer Science 9618": "https://e.pcloud.link/publink/show?code=kZvpjCZxYw1P5n1iEp5UiNrtni77jU1aeiy",
+    "Information Technology 9626" : "https://e.pcloud.link/publink/show?code=kZW9KwZ7g4C9tHSr2p6avtf9oLXcVedEc2V",
 
     // O Level
     "Maths 4024": "https://e.pcloud.link/publink/show?code=kZ6vKxZDhnyiFQoClL6CV4JusJM80wQkT4k",
@@ -53,6 +55,7 @@ function App() {
       { name: "Chemistry 9701", path: ChemistryImage },
       { name: "SAT", path: SATimage },
       { name: "Computer Science 9618", path: CSimage },
+      { name: "Information Technology 9626" , path: ITimage}
     ] : [
       { name: "Maths 4024", path: mathsImage },
       { name: "Islamiyat 2058", path: IslamiyatImage },
