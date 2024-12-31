@@ -1,12 +1,14 @@
 # Nexus-Learn
-- Nexus-Learn is an app that compiles and organizes resources topic-wise for A-level subjects
+- Nexus-Learn is an app that compiles and organizes resources topic-wise for O/A-level subjects
 - Currently, the following subjects are being implemented:
-  - Maths
+  - Maths (O and A level)
   - Further Maths
   - Computer Science
   - Physics
   - Chemistry
   - SAT related resources
+  - Information Technology
+  - Islamiat (O level only)
 
 - The final app will have:
   - past papers (topical)
