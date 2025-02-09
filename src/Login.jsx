@@ -1,67 +1,67 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-function Login({ setToken, setPage }) {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+function Login({ onLogin, onSignupRedirect }) {
+  const [email, setEmail] = useState(""); // Email input
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-
     try {
-      const response = await fetch("http://localhost:5001/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const response = await axios.post("http://localhost:5001/api/auth/login", {
+        email, // Ensure it sends the correct field
+        password,
       });
-
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message);
-
-      localStorage.setItem("token", data.token);
-      setToken(data.token);
-      setPage("dashboard");
+      onLogin(response.data.user);
     } catch (err) {
-      setError(err.message);
+      setError(err.response?.data?.message || "Login failed. Please try again.");
     }
   };
 
   return (
-    <div className="p-6 bg-gray-800 text-text rounded-lg shadow-lg w-96">
-      <h2 className="text-2xl font-bold text-primary">Login</h2>
-      {error && <p className="text-red-500">{error}</p>}
-      <form onSubmit={handleSubmit} className="mt-4">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          className="w-full p-2 my-2 bg-gray-700 border border-gray-600 text-text rounded-lg"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-          className="w-full p-2 my-2 bg-gray-700 border border-gray-600 text-text rounded-lg"
-          onChange={handleChange}
-        />
-        <button className="w-full mt-4 p-2 bg-primary text-black font-bold rounded-lg hover:bg-yellow-500">
-          Login
-        </button>
-      </form>
-      <p className="mt-4">
-        Don't have an account?{" "}
-        <button className="text-primary underline" onClick={() => setPage("signup")}>
-          Signup
-        </button>
-      </p>
+    <div className="bg-[#111111] min-h-screen flex items-center justify-center text-white">
+      <div className="w-full max-w-sm bg-[#111111] p-8 rounded-lg border border-[#ffaa00] shadow-lg">
+        <h1 className="text-2xl font-bold mb-4">Login</h1>
+        {error && <p className="text-[#ffaa00] mb-4">{error}</p>}
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div>
+            <label className="block mb-1 text-sm font-medium">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 bg-[#222222] text-white border border-[#ffaa00] rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffaa00]"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 text-sm font-medium">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 bg-[#222222] text-white border border-[#ffaa00] rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffaa00]"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 bg-[#ffaa00] text-black font-bold rounded-md hover:bg-[#e89a00] transition"
+          >
+            Login
+          </button>
+        </form>
+        <p className="mt-4 text-sm">
+          Don't have an account?{" "}
+          <button
+            className="text-[#ffaa00] hover:underline"
+            onClick={onSignupRedirect}
+          >
+            Sign Up
+          </button>
+        </p>
+      </div>
     </div>
   );
 }
