@@ -1,5 +1,6 @@
 import { ChakraProvider, SimpleGrid, Button, ButtonGroup } from '@chakra-ui/react';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { inject } from "@vercel/analytics";
 import Subject from './Subject.jsx';
 import './App.css';
 import { useState, useRef } from 'react';
